@@ -33,5 +33,13 @@ function AroundCtrl($scope, $location) {
 }
 function EttCtrl($scope, $location) {
 }
-function BulletinCtrl($scope, $location) {
+function BulletinCtrl($scope, $location, $http) {
+	$scope.html = "Loading...";
+	$http({method:'GET', url: 'http://sgee.sch.ac.kr/asia/sub01/sub_05.php'}).
+		success(function(data, status, headers, config) {
+			$scope.html = data;
+		}).
+		error(function(data, status, headers, config) {
+			$scope.html = "error";
+		});
 }

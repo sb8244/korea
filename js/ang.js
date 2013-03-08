@@ -40,6 +40,6 @@ function BulletinCtrl($scope, $location, $http) {
 			$scope.html = data;
 		}).
 		error(function(data, status, headers, config) {
-			$scope.html = "error";
+			$scope.html = "<p>Error</p>";
 		});
 }

@@ -21,8 +21,10 @@ function MainCtrl($scope, $location) {
 	$scope.around = function() {
 		$location.path("/around-main");
 	}
-	$scope.bulletin = function() {
-		$location.path("/bulletin-main");
+	$scope.bulletin = function() {	
+		var url = 'http://sgee.sch.ac.kr/board/list.php?db=asian1';
+		window.plugins.childBrowser.showWebPage(url, {showLocationBar : false}); 
+		//$location.path("/bulletin-main");
 	}
 }
 function PhrasesCtrl($scope, $location) {
@@ -35,13 +37,5 @@ function EttCtrl($scope, $location) {
 }
 function BulletinCtrl($scope, $location, $http) {
 	var url = 'http://sgee.sch.ac.kr/board/list.php?db=asian1';
-	window.plugins.childBrowser.showWebPage(url, {showLocationBar : true}); 
-	/*$scope.html = "Loading...";
-	$http({method:'GET', url: url}).
-		success(function(data, status, headers, config) {
-			$scope.html = data;
-		}).
-		error(function(data, status, headers, config) {
-			$scope.html = "<p>Error</p>";
-		});*/
+	window.plugins.childBrowser.showWebPage(url, {showLocationBar : false}); 
 }

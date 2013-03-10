@@ -9,6 +9,11 @@ angular.module('project', []).
 		when('/bulletin-main', {controller: BulletinCtrl, templateUrl: 'bulletin-main.html'})
 	});
 function MainCtrl($scope, $location) {
+	if($scope.show == undefined)
+	{
+		$scope.show = {};
+	}	
+	$scope.show.up = false;
 	$scope.phrases = function() {
 		$location.path("/phrases-main");
 	}
@@ -28,12 +33,16 @@ function MainCtrl($scope, $location) {
 	}
 }
 function PhrasesCtrl($scope, $location) {
+	$scope.show.up = true;
 }
 function FoodCtrl($scope, $location) {
+	$scope.show.up = true;
 }
 function AroundCtrl($scope, $location) {
+	$scope.show.up = true;
 }
 function EttCtrl($scope, $location) {
+	$scope.show.up = true;
 }
 function BulletinCtrl($scope, $location, $http) {
 	var url = 'http://sgee.sch.ac.kr/board/list.php?db=asian1';

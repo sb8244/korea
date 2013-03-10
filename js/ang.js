@@ -13,40 +13,26 @@ function MainCtrl($scope, $location) {
 	if($scope.show == undefined)
 	{
 		$scope.show = {};
-	}	
+	}
 	$scope.show.up = false;
 	$scope.bulletin = function() {	
 		var url = 'http://sgee.sch.ac.kr/board/list.php?db=asian1';
-		window.plugins.childBrowser.showWebPage(url, {showLocationBar : false}); 
-		//$location.path("/bulletin-main");
+		window.plugins.childBrowser.showWebPage(url, {showLocationBar : false});
+	}
+	$scope.back = function () { 
+		window.history.back();
 	}
 }
 function PhrasesCtrl($scope, $location) {
-	if($scope.show == undefined)
-	{
-		$scope.show = {};
-	}	
 	$scope.show.up = true;
 }
-function FoodCtrl($scope, $location) {
-	if($scope.show == undefined)
-	{
-		$scope.show = {};
-	}	
+function FoodCtrl($scope, $location) {	
 	$scope.show.up = true;
 }
-function AroundCtrl($scope, $location) {
-	if($scope.show == undefined)
-	{
-		$scope.show = {};
-	}	
+function AroundCtrl($scope, $location) {	
 	$scope.show.up = true;
 }
-function EttCtrl($scope, $location) {
-	if($scope.show == undefined)
-	{
-		$scope.show = {};
-	}	
+function EttCtrl($scope, $location) {	
 	$scope.show.up = true;
 }
 function BulletinCtrl($scope, $location, $http) {

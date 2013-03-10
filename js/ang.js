@@ -1,4 +1,4 @@
-angular.module('project', []).
+angular.module('project', ['ui.bootstrap']).
 	config(function($routeProvider) {
 		$routeProvider.
 		when('/', {controller:MainCtrl, templateUrl:'main.html'}).
@@ -39,3 +39,8 @@ function BulletinCtrl($scope, $location, $http) {
 	var url = 'http://sgee.sch.ac.kr/board/list.php?db=asian1';
 	window.plugins.childBrowser.showWebPage(url, {showLocationBar : false}); 
 }
+window.getPhoneGapPath = function() {
+    var path = window.location.pathname;
+    path = path.substr( path, path.length - 10 );
+    return 'file://' + path;
+};

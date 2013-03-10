@@ -15,15 +15,19 @@ function MainCtrl($scope, $location) {
 	}	
 	$scope.show.up = false;
 	$scope.phrases = function() {
+		$scope.show.up = true;
 		$location.path("/phrases-main");
 	}
 	$scope.food = function() {
+		$scope.show.up = true;
 		$location.path("/food-main");
 	}
 	$scope.ettiquette = function() {
+		$scope.show.up = true;
 		$location.path("/ettiquette-main");
 	}
 	$scope.around = function() {
+		$scope.show.up = true;
 		$location.path("/around-main");
 	}
 	$scope.bulletin = function() {	
@@ -33,16 +37,12 @@ function MainCtrl($scope, $location) {
 	}
 }
 function PhrasesCtrl($scope, $location) {
-	$scope.show.up = true;
 }
 function FoodCtrl($scope, $location) {
-	$scope.show.up = true;
 }
 function AroundCtrl($scope, $location) {
-	$scope.show.up = true;
 }
 function EttCtrl($scope, $location) {
-	$scope.show.up = true;
 }
 function BulletinCtrl($scope, $location, $http) {
 	var url = 'http://sgee.sch.ac.kr/board/list.php?db=asian1';

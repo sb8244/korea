@@ -5,6 +5,9 @@ angular.module('project', ['ui.bootstrap']).
 		when('/phrases-main', {controller: PhrasesCtrl, templateUrl:'phrases-main.html'}).
 		when('/phrases-greeting', {controller: PhrasesCtrl, templateUrl:'phrases/greeting.html'}).
 		when('/phrases-shopping', {controller: PhrasesCtrl, templateUrl:'phrases/shopping.html'}).
+		when('/phrases-dining', {controller: PhrasesCtrl, templateUrl:'phrases/dining.html'}).
+		when('/phrases-around', {controller: PhrasesCtrl, templateUrl:'phrases/around.html'}).
+		when('/phrases-numbers', {controller: PhrasesCtrl, templateUrl:'phrases/numbers.html'}).
 		when('/food-main', {controller: FoodCtrl, templateUrl: 'food-main.html'}).
 		when('/ettiquette-main', {controller: EttCtrl, templateUrl: 'ettiquette-main.html'}).
 		when('/around-main', {controller: AroundCtrl, templateUrl: 'around-main.html'}).

@@ -1,10 +1,7 @@
 <!doctype html>
 <html ng-app="project">
 	<head>
-		<meta name="viewport" id="viewport"
-		 content="width=device-width, height=device-height,
-		 initial-scale=1.0, maximum-scale=1.0,
-		 user-scalable=no;" />
+		<meta name="viewport" content="width=device-width, height=300, initial-scale=.5">
 		<script src="phonegap.js"></script>
 		<script src="childbrowser.js"></script>
 		<script src="js/angular.min.js"></script>
@@ -20,6 +17,9 @@
 	            font-family: lobster;
 	            src: url(fonts/lobster.otf);
 	        }
+	        html, body { 
+				height: 100%;
+	        }
 			body { padding: 0; margin: 0;}
 			body { background-color: #00abf0;}
 
@@ -28,22 +28,26 @@
 			.padded { padding: 5px;}
 			.big-font { font-size: 2em;}
 			.padded-top { padding-top: 1em;}
-			.header { font-family: lobster;}
-			.header h1 {font-size: 4em;}
+			.header { font-family: lobster; height:50px; }
+			.header h1 {font-size: 3.5em; line-height: 150%; margin:0px; height:100%;}
 			a, a:hover{ color: #333; text-decoration: none}
 			.clickable { cursor: pointer;}
+			.height { height: 100%; }
+			.main > .clearfix { height: 20%; }
+			.menurow img { height: 100%; max-height: 100px;}
 		</style>
+
 	</head>
 	<body>
-		<div class="container" ng-controller="MainCtrl">
+		<div class="container" ng-controller="MainCtrl" style="height:100%; max-height:100%;">
 			<div class="row header">
-				<div class="span12 center">
+				<div class="span12 center height">
 					<h1><a ng-click="back()"><img ng-class="{true:'display', false:'hidden', '':'hidden'}[show.up]" 
 						style="padding-bottom: 5px;" src="up.png"/>KoreaME</a></h1>
 				</div>
 			</div>
 			<div class="clearfix"></div>
-			<div ng-view></div>
+			<div ng-view style="height:630px; max-height:630px;"></div>
 		</div>
 	</body>
 </html>

@@ -19,6 +19,7 @@
 	        }
 	        html, body { 
 				height: 100%;
+				min-height:400px;
 	        }
 			body { padding: 0; margin: 0;}
 			body { background-color: #00abf0;}
@@ -28,7 +29,7 @@
 			.padded { padding: 5px;}
 			.big-font { font-size: 2em;}
 			.padded-top { padding-top: 1em;}
-			.header { font-family: lobster; height:50px; }
+			.header { font-family: lobster; height:15%; }
 			.header h1 {font-size: 3.5em; line-height: 150%; margin:0px; height:100%;}
 			a, a:hover{ color: #333; text-decoration: none}
 			.clickable { cursor: pointer;}
@@ -47,7 +48,7 @@
 				</div>
 			</div>
 			<div class="clearfix"></div>
-			<div ng-view style="height:calc(100% - 50px);"></div>
+			<div ng-view style="height: 85%;"></div>
 		</div>
 	</body>
 </html>

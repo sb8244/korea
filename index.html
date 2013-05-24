@@ -36,14 +36,18 @@
 				display:block;
 			}
 			.ui-body-c,.ui-dialog.ui-overlay-c{
-			    text-shadow: 0pt 0px 0pt rgb(0, 0, 0); 
+				text-shadow: 0pt 0px 0pt rgb(0, 0, 0); 
 			}
 			.ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
-			        font-family: Helvetica, Arial, sans-serif, Verdana;
-			        text-shadow: none;
+					font-family: Helvetica, Arial, sans-serif, Verdana;
+					text-shadow: none;
 			}
 		</style>
 		<script>
+		$(document).bind("mobileinit", function(){
+			$.mobile.defaultPageTransition = 'none';
+			$.mobile.useFastClick = true;
+		});
 		$(document).bind('pageinit', function() {
 			var file = window.location.href.split("?")[1];
 			if($.mobile.urlHistory.stack.length == 1 && file != "menu") {

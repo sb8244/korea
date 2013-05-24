@@ -1,53 +1,57 @@
 <!doctype html>
-<html ng-app="project">
+<html>
 	<head>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-		<script src="phonegap.js"></script>
-		<script src="childbrowser.js"></script>
-		<script src="js/angular.min.js"></script>
-		<script src="js/angular-resource.min.js"></script>
-		<script src="js/uistrap.min.js"></script>
-		<script src="js/uistrap-temp.min.js"></script>
-		<script src="js/ang.js"></script>
-		<!--<script src="http://debug.phonegap.com/target/target-script-min.js#sb8244"></script>-->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/jquery.mobile.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.mobile.js"></script>
 		<style>
-			@font-face {
-	            font-family: lobster;
-	            src: url(fonts/lobster.otf);
-	        }
-	        html, body { 
-				height: 100%;
-	        }
-			body { padding: 0; margin: 0;}
-			body { background-color: #00abf0;}
-
-			.container{ width: 100% ;}
-			.center { text-align: center}
-			.padded { padding: 5px;}
-			.big-font { font-size: 2em;}
-			.padded-top { padding-top: 1em;}
-			.header { font-family: lobster; height:15%; min-height:60px; }
-			.header h1 {font-size: 3.5em; line-height: 150%; margin:0px; height:100%;}
-			a, a:hover{ color: #333; text-decoration: none}
-			.clickable { cursor: pointer;}
-			.height { height: 100%; }
-			.main > .clearfix { height: 20%; }
-			.menurow img { height: 100%; max-height: 100px;}
+			#page {
+				background: #00abf0 !important;
+			}
+			#content {
+				padding-top: 85px;
+			}
+			#head-images {
+				position: absolute;
+				top: 44px;
+				width: 100%;
+				height: 100px;
+				overflow: hidden;
+			}
+			#head-images p {
+				width: 19%;
+				float:left;
+				min-width:100px;
+				overflow: hidden;
+			}
+			#head-images p img {
+				margin:0 auto;
+				display:block;
+			}
 		</style>
-
 	</head>
 	<body>
-		<div class="container" ng-controller="MainCtrl" style="height:100%; max-height:100%;">
-			<div class="row header">
-				<div class="span12 center height">
-					<h1><a ng-click="back()"><img ng-class="{true:'display', false:'hidden', '':'hidden'}[show.up]" 
-						style="padding-bottom: 5px;" src="up.png"/>KoreaME</a></h1>
+		<div id="page" data-role="page">
+			<div data-role="header">
+   				<a href="#">Back</a>
+				<h1>KoreaME</h1>
+			</div>
+			<div id="content" data-role="content">
+				<div id="head-images">
+					<p><img src="speak.png"/></p>
+					<p><img src="eat.png"/></p>
+					<p><img src="around.png"/></p>
+					<p><img src="drink.png"/></p>
+					<p><img src="cry.png"/></p>
+				</div>
+				<div data-role="controlgroup" >
+					<a href="#" data-role="button" data-theme="" data-icon="arrow-r" data-iconpos="right">Basic Phrases</a>
+					<a href="#" data-role="button" data-theme="" data-icon="arrow-r" data-iconpos="right">Food</a>
+					<a href="#" data-role="button" data-theme="" data-icon="arrow-r" data-iconpos="right">Getting Around</a>
+					<a href="#" data-role="button" data-theme="" data-icon="arrow-r" data-iconpos="right">Ettiquette</a>
+					<a href="#" data-role="button" data-theme="" data-icon="arrow-r" data-iconpos="right">Bulletin Board</a>				
 				</div>
 			</div>
-			<div class="clearfix"></div>
-			<div ng-view style="height: 85%;"></div>
 		</div>
 	</body>
 </html>

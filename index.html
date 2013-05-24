@@ -44,11 +44,11 @@
 			}
 		</style>
 		<script>
-		$(document).bind('mobileinit', function() {
-			$( "body" ).on( 'swiperight', function() {history.back()}); 
-			$( "body" ).on( 'swipeleft', function() {history.forward()});  
+		$(document).bind('mobileinit', function() { 
 		})
 		$(document).bind('pageinit', function() {
+			$( "body" ).on( 'swiperight', function() {history.back()}); 
+			$( "body" ).on( 'swipeleft', function() {history.forward()}); 
 			var file = window.location.href.split("?")[1];
 			if($.mobile.urlHistory.stack.length == 1 && file != "menu") {
 				window.location.href="?menu";

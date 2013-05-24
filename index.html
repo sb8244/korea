@@ -44,10 +44,6 @@
 			}
 		</style>
 		<script>
-		$(document).bind("mobileinit", function(){
-			$.mobile.defaultPageTransition = 'none';
-			$.mobile.useFastClick = true;
-		});
 		$(document).bind('pageinit', function() {
 			var file = window.location.href.split("?")[1];
 			if($.mobile.urlHistory.stack.length == 1 && file != "menu") {
@@ -56,8 +52,6 @@
 		});
 		$.mobile.routerlite.routechange("/", function(page, path) {
 			var file = window.location.href.split("?")[1];
-			console.log(file + ".html");
-			
 			$($.mobile.activePage).find("#content").load(file + ".html", function() {
 				$($.mobile.activePage).find("#content").trigger("create");
 			});

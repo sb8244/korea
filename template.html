@@ -1,13 +1,16 @@
 <!doctype html>
 <html ng-app="project">
 	<head>
+		<script src="http://debug.phonegap.com/target/target-script-min.js#sb8244"></script>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 		<script src="phonegap.js"></script>
 		<script src="childbrowser.js"></script>
 		<link rel="stylesheet" href="css/jquery.mobile.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-resource.min.js"></script>
+		<script src="js/app.js"></script>
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.mobile.js"></script>
-		<script src="js/jquery.mobile.routerlite.js"></script>
 		<style>
 			html, body {
 				width: 100%;
@@ -15,7 +18,7 @@
 			#page {
 				background: #00abf0 !important;
 			}
-			.top-pad {
+			#content {
 				padding-top: 85px;
 			}
 			#head-images {
@@ -35,30 +38,7 @@
 				margin:0 auto;
 				display:block;
 			}
-			.ui-body-c,.ui-dialog.ui-overlay-c{
-			    text-shadow: 0pt 0px 0pt rgb(0, 0, 0); 
-			}
-			.ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
-			        font-family: Helvetica, Arial, sans-serif, Verdana;
-			        text-shadow: none;
-			}
 		</style>
-		<script>
-		$(document).bind('pageinit', function() {
-			var file = window.location.href.split("?")[1];
-			if($.mobile.urlHistory.stack.length == 1 && file != "menu") {
-				window.location.href="?menu";
-			}
-		});
-		$.mobile.routerlite.routechange("/", function(page, path) {
-			var file = window.location.href.split("?")[1];
-			console.log(file + ".html");
-			
-			$($.mobile.activePage).find("#content").load(file + ".html", function() {
-				$($.mobile.activePage).find("#content").trigger("create");
-			});
-		});
-		</script>
 	</head>
 	<body>
 		<div id="page" data-role="page" data-add-back-btn="true">
@@ -66,7 +46,9 @@
 				<h1>KoreaME</h1>
 			</div>
 			<div id="content" data-role="content">
-				
+				<div class="container" ng-controller="MainCtrl">
+					<div ng-view></div>
+				</div>
 			</div>
 		</div>
 	</body>

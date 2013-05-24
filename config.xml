@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns		= "http://www.w3.org/ns/widgets"
-	xmlns:gap	= "http://phonegap.com/ns/1.0"
+	xmlns:gap	= "http://phonegap.com/ns/2.7"
 	id		= "us.stephebussey"
-	version 	= "1.0.0">
+	version 	= "2.7.0">
 
 	<name>KoreaME</name>
 
